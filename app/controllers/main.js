@@ -71,6 +71,7 @@ getListPhones();
 // Process thêm edit-----------------------
 //Function khi click vào nút Edit
 function editHandler(id) {
+    getMyEle("name").disabled =true;
     document.querySelector(".modal-footer").innerHTML = `<button class="btn btn-warning" onclick = "updateHandler(${id})">Update</button>`
     console.log("heelo" + id)
     services.getPhoneAPI(id)
@@ -127,6 +128,7 @@ document.querySelector("#btnThemSanPham").onclick = function () {
     document.querySelector(".modal-title").innerHTML = "Add new product";
     document.querySelector(".modal-footer").innerHTML = `<button class="btn btn-success" onclick = "addHandler()">Add</button>`;
     clearInput();
+    getMyEle("name").disabled =false;
 }
 //Khi nhấn vào nút Add
 function addHandler() {
